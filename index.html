@@ -39,7 +39,7 @@
                     timer0: null,
                     timer1: null
                 }
-            $.post('./json/axis.json',function(result,state){
+            $.get('./json/axis.json',function(result,state){
                 surge = JSON.parse(result)
                 if (state == 'success') {
                     // 机柜空调坐标、名称以及名称坐标
@@ -646,7 +646,7 @@
                     controller: []
                 }
                 // 请求闪光信息
-                $.post('./json/axis.json',function(result,state){
+                $.get('./json/axis.json',function(result,state){
                     alarm.surge = JSON.parse(result)
                     if (state == 'success') {
                         $.each(alarm.surge.List[0].equipInfo, function(index, val) {
